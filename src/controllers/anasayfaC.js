@@ -2,7 +2,7 @@ import { observable, action, decorate } from 'mobx';
 
 class anasayfaC {
     cDMount = () => { //AÇILIŞTAN HEMEN SONRA
-
+        setTimeout(() => this.splashAktif = false, 2000);
     }
     cDUpdate = () => { //UPDATE'DEN HEMEN SONRA
 
