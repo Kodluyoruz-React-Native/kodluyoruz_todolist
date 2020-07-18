@@ -1,0 +1,25 @@
+{
+    "AYARLAR": {},
+    "KULLANICILAR": {
+        "FBUID": {
+            "ad": "",
+            "soyad": "",
+            "nick": ""
+        }
+    },
+    "NOTLAR": {
+        "FBUID": {
+            "UNIQUEID": {
+                "baslik": "",
+                "not": "",
+                "resimler": ""
+            }
+        }
+    },
+    "LOG": {
+        "FBUID": {}
+    },
+    "HATA": {
+        "FBUID": {}
+    }
+}
