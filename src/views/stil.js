@@ -49,11 +49,13 @@ export const anasayfaS = StyleSheet.create({
         marginTop: H(3),
         flex: 1
     },
-
     notK: {
         backgroundColor: R.r1,
         marginTop: H(1.2),
         marginBottom: H(1.2),
         padding: W(2)
+    },
+    notButonlarK: {
+        borderWidth: 1,
     }
 });

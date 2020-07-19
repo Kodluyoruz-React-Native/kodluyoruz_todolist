@@ -1,15 +1,18 @@
 import React from 'react';
-import { View, Text, TextInput } from 'react-native';
+import { View, Text } from 'react-native';
 import { observer } from 'mobx-react';
 import { View as ViewA } from 'react-native-animatable';
 
 
 import Resim from '../components/Resim';
+import Ikon from '../components/Ikon';
+
 import tlfnH from '../helper/tlfnH';
 
 import C from '../controllers/anasayfaC';
 
 import { anasayfaS as S } from './stil';
+import temaH from '../helper/temaH';
 
 class Anasayfa extends React.Component {
     componentDidMount = C.cDMount;
@@ -17,7 +20,7 @@ class Anasayfa extends React.Component {
     componentWillUnmount = C.cWUnmount;
 
     ustAlan() {
-        const sa = C.splashAktif;
+        //const sa = C.splashAktif;
 
         return (
             <View style={[S.ustAlanK/*, { display: sa ? 'none' : 'flex' }*/]}>
@@ -42,6 +45,17 @@ class Anasayfa extends React.Component {
         return (
             <ViewA animation={'bounceIn'} delay={350} style={S.notK}>
                 <Text>Occaecat sit eiusmod pariatur ad consectetur. Occaecat sit eiusmod pariatur ad consectetur.</Text>
+
+
+
+                <View style={S.notButonlarK}>
+                    <Ikon
+                        is={'AD'} //ikonset
+                        i={'delete'} //ikon name
+                        c={'red'} //color
+                        s={32} //size
+                    />
+                </View>
             </ViewA>
         );
     }
