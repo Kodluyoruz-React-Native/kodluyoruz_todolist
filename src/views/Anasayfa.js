@@ -47,7 +47,7 @@ class Anasayfa extends React.Component {
         const butonlarAcik = C.notButonlarAcik === i;
 
         let okIkon;
-        if (C.notButonlarAcKapaYon) okIkon = '-270';
+        if (C.notButonlarAcKapaYon && butonlarAcik) okIkon = '-270';
         else if (butonlarAcik) okIkon = '-180';
         else okIkon = '0';
 
