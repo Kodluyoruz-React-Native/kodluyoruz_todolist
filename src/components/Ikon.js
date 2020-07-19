@@ -13,9 +13,14 @@ import Octicons from 'react-native-vector-icons/Octicons';
 import Feather from 'react-native-vector-icons/Feather';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
+import { LayoutAnimation } from 'react-native';
 
 
 class Ikon extends Component {
+    componentDidUpdate() {
+        LayoutAnimation.easeInEaseOut();
+    }
+
     render() {
         const style = [
             !this.props.golgeYok && {
@@ -24,6 +29,7 @@ class Ikon extends Component {
                 textShadowRadius: 5,
             },
             this.props.m && { transform: [{ rotateY: '180deg' }] },
+            this.props.rotate && { transform: [{ rotate: `${this.props.rotate}deg` }] },
             this.props.rotateX && { transform: [{ rotateX: `${this.props.rotateX}deg` }] },
             this.props.rotateY && { transform: [{ rotateY: `${this.props.rotateY}deg` }] },
             this.props.style

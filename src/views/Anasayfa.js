@@ -35,35 +35,43 @@ class Anasayfa extends React.Component {
     notlar() {
         return (
             <View style={S.notlarK}>
-                {this.not()}
-                {this.not()}
-                {this.not()}
+                {this.not(0)}
+                {this.not(1)}
+                {this.not(2)}
             </View>
         );
     }
 
 
-    not() {
+    not(i) {
+        const butonlarAcik = C.notButonlarAcik === i;
+
+        let okIkon;
+        if (C.notButonlarAcKapaYon) okIkon = '-270';
+        else if (butonlarAcik) okIkon = '-180';
+        else okIkon = '0';
+
         return (
-            <ViewA animation={'bounceIn'} delay={350} style={S.notK}>
+            <ViewA key={i} animation={'bounceIn'} delay={350} style={S.notK}>
                 <Text>Occaecat sit eiusmod pariatur ad consectetur. Occaecat sit eiusmod pariatur ad consectetur.</Text>
 
-
-
                 <View style={S.notButonlarK}>
-                    <TouchableOpacity style={S.butonlarAcKapaButon}>
+                    <TouchableOpacity style={S.butonlarAcKapaButon} onPress={() => C.setNotButonlarAcik(i)}>
                         <Ikon
                             is={'AntDesign'} //ikonset
                             i={'left'} //ikon name
                             c={'black'} //color
                             s={tlfnH.W(7)} //size
+                            rotate={okIkon}
                         />
                     </TouchableOpacity>
 
-                    {this.notButon()}
-                    {this.notButon()}
-                    {this.notButon()}
-                    {this.notButon()}
+                    <View style={[S.notButonlarAK, { display: butonlarAcik ? 'flex' : 'none' }]}>
+                        {this.notButon()}
+                        {this.notButon()}
+                        {this.notButon()}
+                        {this.notButon()}
+                    </View>
                 </View>
             </ViewA>
         );
