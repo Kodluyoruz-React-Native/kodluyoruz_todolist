@@ -54,7 +54,7 @@ export const anasayfaS = StyleSheet.create({
 		marginTop: H(1.2),
 		marginBottom: H(1.2),
 		padding: W(2),
-		paddingBottom: W(4.2),
+		paddingBottom: W(7),
 	},
 	notButonlarK: {
 		flexDirection: 'row',
@@ -62,10 +62,21 @@ export const anasayfaS = StyleSheet.create({
 		bottom: -10,
 		right: 10,
 		backgroundColor: R.r1,
-		padding: 5,
-		paddingTop: 0,
-		borderRadius: 5
+		borderRadius: 5,
+		alignItems: 'center',
+		justifyContent: 'center',
+		paddingRight: 5,
+		backgroundColor: R.r1,
+		borderWidth: 1,
+		borderColor: 'white'
+	},
+	butonlarAcKapaButon: {
+		alignSelf: 'center',
+		marginRight: 5
 	},
 	notButonK: {
+		marginBottom: 5,
+		marginRight: 3,
+		marginLeft: 3
 	}
 });

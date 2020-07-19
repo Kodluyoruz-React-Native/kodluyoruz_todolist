@@ -51,6 +51,15 @@ class Anasayfa extends React.Component {
 
 
                 <View style={S.notButonlarK}>
+                    <TouchableOpacity style={S.butonlarAcKapaButon}>
+                        <Ikon
+                            is={'AntDesign'} //ikonset
+                            i={'left'} //ikon name
+                            c={'black'} //color
+                            s={tlfnH.W(7)} //size
+                        />
+                    </TouchableOpacity>
+
                     {this.notButon()}
                     {this.notButon()}
                     {this.notButon()}
@@ -65,7 +74,7 @@ class Anasayfa extends React.Component {
                 <Ikon
                     is={'AntDesign'} //ikonset
                     i={'delete'} //ikon name
-                    c={'red'} //color
+                    c={temaH.renkler.r2} //color
                     s={tlfnH.W(7)} //size
                 />
             </TouchableOpacity>
