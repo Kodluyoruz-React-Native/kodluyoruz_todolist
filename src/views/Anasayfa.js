@@ -18,7 +18,7 @@ class Anasayfa extends React.Component {
         const sa = C.splashAktif;
 
         return (
-            <View style={[S.ustAlanK, { display: sa ? 'none' : 'flex' }]}>
+            <View style={[S.ustAlanK/*, { display: sa ? 'none' : 'flex' }*/]}>
                 <Text style={S.ustAlanY}>lorem ipsum dolar sit amet</Text>
                 <Text style={S.ustAlanY}>lorem ipsum dolar</Text>
                 <Text style={S.ustAlanY}>lorem ipsum dolar sit</Text>
@@ -50,10 +50,9 @@ class Anasayfa extends React.Component {
 
         return (
             <View style={[S.K, sa && S.K2]}>
-                {this.ustAlan()}
 
-
-                {this.notlar()}
+                {!sa && this.ustAlan()}
+                {!sa && this.notlar()}
 
 
                 <View style={!sa && S.logoK}>
