@@ -15,5 +15,4 @@ decorate(
     }
 );
 
-
 export default new temaH();

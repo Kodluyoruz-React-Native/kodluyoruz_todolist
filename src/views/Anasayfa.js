@@ -19,6 +19,9 @@ class Anasayfa extends React.Component {
 
         return (
             <View style={[S.ustAlanK, { display: sa ? 'none' : 'flex' }]}>
+                <Text style={S.ustAlanY}>lorem ipsum dolar sit amet</Text>
+                <Text style={S.ustAlanY}>lorem ipsum dolar</Text>
+                <Text style={S.ustAlanY}>lorem ipsum dolar sit</Text>
             </View>
         );
     }
@@ -29,14 +32,14 @@ class Anasayfa extends React.Component {
 
         return (
             <View style={[S.K, sa && S.K2]}>
+                {this.ustAlan()}
+
                 <View style={!sa && S.logoK}>
                     <Resim
                         source={require('../../assets/logo/logo.png')}
                         height={tlfnH.W(sa ? 60 : 20)}
                     />
                 </View>
-
-                {this.ustAlan()}
             </View>
         );
     }
