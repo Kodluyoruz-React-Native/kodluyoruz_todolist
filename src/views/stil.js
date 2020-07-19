@@ -46,8 +46,6 @@ export const anasayfaS = StyleSheet.create({
 
 
     notlarK: {
-        borderWidth: 1,
-        borderColor: 'red',
         marginTop: H(3),
         flex: 1
     },

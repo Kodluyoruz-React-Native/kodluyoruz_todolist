@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Text, TextInput } from 'react-native';
 import { observer } from 'mobx-react';
+import { View as ViewA } from 'react-native-animatable';
+
 
 import Resim from '../components/Resim';
 import tlfnH from '../helper/tlfnH';
@@ -38,9 +40,9 @@ class Anasayfa extends React.Component {
     }
     not() {
         return (
-            <View style={S.notK}>
+            <ViewA animation={'bounceIn'} delay={350} style={S.notK}>
                 <Text>Occaecat sit eiusmod pariatur ad consectetur. Occaecat sit eiusmod pariatur ad consectetur.</Text>
-            </View>
+            </ViewA>
         );
     }
 
