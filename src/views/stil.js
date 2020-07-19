@@ -21,18 +21,14 @@ export const anasayfaS = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
+
+
     logoK: {
         position: 'absolute',
         left: W(2),
         top: H(2)
     },
 
-    ustAlanY: {
-        fontWeight: 'bold',
-        fontSize: 15,
-        color: R.r2,
-        textAlign: 'right'
-    },
 
     ustAlanK: {
         minHeight: W(20) + H(4),
@@ -40,6 +36,26 @@ export const anasayfaS = StyleSheet.create({
         paddingLeft: W(25),
         paddingRight: 15,
         justifyContent: 'center',
+    },
+    ustAlanY: {
+        fontWeight: 'bold',
+        fontSize: 15,
+        color: R.r2,
+        textAlign: 'right'
+    },
 
+
+    notlarK: {
+        borderWidth: 1,
+        borderColor: 'red',
+        marginTop: H(3),
+        flex: 1
+    },
+
+    notK: {
+        backgroundColor: R.r1,
+        marginTop: H(1.2),
+        marginBottom: H(1.2),
+        padding: W(2)
     }
 });

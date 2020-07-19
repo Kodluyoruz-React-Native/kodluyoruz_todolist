@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TextInput } from 'react-native';
 import { observer } from 'mobx-react';
 
 import Resim from '../components/Resim';
@@ -27,12 +27,34 @@ class Anasayfa extends React.Component {
     }
 
 
+    notlar() {
+        return (
+            <View style={S.notlarK}>
+                {this.not()}
+                {this.not()}
+                {this.not()}
+            </View>
+        );
+    }
+    not() {
+        return (
+            <View style={S.notK}>
+                <Text>Occaecat sit eiusmod pariatur ad consectetur. Occaecat sit eiusmod pariatur ad consectetur.</Text>
+            </View>
+        );
+    }
+
+
     render() {
         const sa = C.splashAktif;
 
         return (
             <View style={[S.K, sa && S.K2]}>
                 {this.ustAlan()}
+
+
+                {this.notlar()}
+
 
                 <View style={!sa && S.logoK}>
                     <Resim
