@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { observer } from 'mobx-react';
 import { View as ViewA } from 'react-native-animatable';
 
@@ -41,6 +41,8 @@ class Anasayfa extends React.Component {
             </View>
         );
     }
+
+
     not() {
         return (
             <ViewA animation={'bounceIn'} delay={350} style={S.notK}>
@@ -49,14 +51,24 @@ class Anasayfa extends React.Component {
 
 
                 <View style={S.notButonlarK}>
-                    <Ikon
-                        is={'AD'} //ikonset
-                        i={'delete'} //ikon name
-                        c={'red'} //color
-                        s={32} //size
-                    />
+                    {this.notButon()}
+                    {this.notButon()}
+                    {this.notButon()}
+                    {this.notButon()}
                 </View>
             </ViewA>
+        );
+    }
+    notButon() {
+        return (
+            <TouchableOpacity style={S.notButonK}>
+                <Ikon
+                    is={'AntDesign'} //ikonset
+                    i={'delete'} //ikon name
+                    c={'red'} //color
+                    s={tlfnH.W(7)} //size
+                />
+            </TouchableOpacity>
         );
     }
 

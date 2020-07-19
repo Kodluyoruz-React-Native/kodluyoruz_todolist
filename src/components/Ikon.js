@@ -30,15 +30,15 @@ class Ikon extends Component {
         ];
 
 
-        if (this.props.is === 'MCI') return <MaterialCommunityIcons name={this.props.i} size={this.props.s || 32} color={this.props.c || 'white'} style={style} />;
+        if (this.props.is === 'MaterialCommunityIcons') return <MaterialCommunityIcons name={this.props.i} size={this.props.s || 32} color={this.props.c || 'white'} style={style} />;
         else if (this.props.is === 'Ionicons') return <Ionicons name={this.props.i} size={this.props.s || 32} color={this.props.c || 'white'} style={style} />;
         else if (this.props.is === 'Foundation') return <Foundation name={this.props.i} size={this.props.s || 32} color={this.props.c || 'white'} style={style} />;
         else if (this.props.is === 'Fontisto') return <Fontisto name={this.props.i} size={this.props.s || 32} color={this.props.c || 'white'} style={style} />;
-        else if (this.props.is === 'FA') return <FontAwesome name={this.props.i} size={this.props.s || 32} color={this.props.c || 'white'} style={style} />;
-        else if (this.props.is === 'FA5') return <FontAwesome5 name={this.props.i} size={this.props.s || 32} color={this.props.c || 'white'} style={style} />;
-        else if (this.props.is === 'MI') return <MaterialIcons name={this.props.i} size={this.props.s || 32} color={this.props.c || 'white'} style={style} />;
+        else if (this.props.is === 'FontAwesome') return <FontAwesome name={this.props.i} size={this.props.s || 32} color={this.props.c || 'white'} style={style} />;
+        else if (this.props.is === 'FontAwesome5') return <FontAwesome5 name={this.props.i} size={this.props.s || 32} color={this.props.c || 'white'} style={style} />;
+        else if (this.props.is === 'MaterialIcons') return <MaterialIcons name={this.props.i} size={this.props.s || 32} color={this.props.c || 'white'} style={style} />;
         else if (this.props.is === 'Entypo') return <Entypo name={this.props.i} size={this.props.s || 32} color={this.props.c || 'white'} style={style} />;
-        else if (this.props.is === 'AD') return <AntDesign name={this.props.i} size={this.props.s || 32} color={this.props.c || 'white'} style={style} />;
+        else if (this.props.is === 'AntDesign') return <AntDesign name={this.props.i} size={this.props.s || 32} color={this.props.c || 'white'} style={style} />;
         else if (this.props.is === 'Octicons') return <Octicons name={this.props.i} size={this.props.s || 32} color={this.props.c || 'white'} style={style} />;
         else if (this.props.is === 'Feather') return <Feather name={this.props.i} size={this.props.s || 32} color={this.props.c || 'white'} style={style} />;
         else if (this.props.is === 'EvilIcons') return <EvilIcons name={this.props.i} size={this.props.s || 32} color={this.props.c || 'white'} style={style} />;
