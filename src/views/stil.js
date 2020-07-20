@@ -43,20 +43,21 @@ export const anasayfaS = StyleSheet.create({
 		color: R.r2,
 		textAlign: 'right'
 	},
-
-
-	notlarK: {
-		marginTop: H(3),
+});
+export const anasayfaNotS = StyleSheet.create({
+	notlarK: { //tüm notların içinde bulunduğu View
 		flex: 1
 	},
-	notK: {
+	notK: { //her bir not için View
 		backgroundColor: R.r1,
 		marginTop: H(1.2),
 		marginBottom: H(1.2),
 		padding: W(2),
 		paddingBottom: W(9),
 	},
-	notButonlarK: {
+
+
+	notButonlarK: { //notlardaki açılır butonlar alanı
 		flexDirection: 'row',
 		position: 'absolute',
 		bottom: -10,
@@ -73,15 +74,37 @@ export const anasayfaS = StyleSheet.create({
 		borderBottomWidth: 0,
 		borderColor: 'white',
 	},
-	notButonlarAK: {
-		flexDirection: 'row',
-	},
+	notButonlarAK: { flexDirection: 'row' },
 	butonlarAcKapaButon: {
 		alignSelf: 'center',
-		marginRight: 5
 	},
 	notButonK: {
 		marginRight: 3,
 		marginLeft: 3
+	},
+
+
+	notRenkSecK: {
+		borderWidth: 1,
+		flexDirection: 'row',
+		position: 'absolute',
+		bottom: -W(2),
+		left: 10,
+		maxWidth: W(30),
+		backgroundColor: R.r1,
+		borderRadius: 2,
+		borderWidth: 2,
+		borderBottomWidth: 0,
+		borderColor: 'white',
+		paddingTop: 3,
+		paddingBottom: 3
+
+	},
+	notRenk: {
+		width: W(6),
+		height: W(6),
+		borderRadius: W(3),
+		marginRight: 5,
+		marginLeft: 5,
 	}
 });

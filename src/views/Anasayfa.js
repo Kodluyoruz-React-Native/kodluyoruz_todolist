@@ -1,29 +1,30 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
 import { observer } from 'mobx-react';
 import { View as ViewA } from 'react-native-animatable';
 
-
 import Resim from '../components/Resim';
 import Ikon from '../components/Ikon';
+import Arkaplan from '../components/Arkaplan';
 
 import tlfnH from '../helper/tlfnH';
 
 import C from '../controllers/anasayfaC';
 
-import { anasayfaS as S } from './stil';
+import { anasayfaS as S, anasayfaNotS as aNotS } from './stil';
+
 import temaH from '../helper/temaH';
+
 
 class Anasayfa extends React.Component {
     componentDidMount = C.cDMount;
     componentDidUpdate = C.cDUpdate;
     componentWillUnmount = C.cWUnmount;
 
-    ustAlan() {
-        //const sa = C.splashAktif;
 
+    ustAlan() {
         return (
-            <View style={[S.ustAlanK/*, { display: sa ? 'none' : 'flex' }*/]}>
+            <View style={S.ustAlanK}>
                 <Text style={S.ustAlanY}>lorem ipsum dolar sit amet</Text>
                 <Text style={S.ustAlanY}>lorem ipsum dolar</Text>
                 <Text style={S.ustAlanY}>lorem ipsum dolar sit</Text>
@@ -33,52 +34,110 @@ class Anasayfa extends React.Component {
 
 
     notlar() {
+        const notlar = [ //SUNUCUDAN GELECEK
+            {
+                aciklama: 'Irure dolore voluptate voluptate dolor amet anim aliquip fugiat est Lorem in aliqua dolor.',
+                renk: 'r3'
+            },
+            {
+                aciklama: 'Irure dolore voluptate voluptate dolor amet anim aliquip fugiat est Lorem in aliqua dolor.',
+                renk: 'r2'
+            },
+            {
+                aciklama: 'Irure dolore voluptate voluptate dolor amet anim aliquip fugiat est Lorem in aliqua dolor.',
+                renk: 'r8'
+            },
+            {
+                aciklama: 'Irure dolore voluptate voluptate dolor amet anim aliquip fugiat est Lorem in aliqua dolor.',
+                renk: 'r7'
+            },
+            {
+                aciklama: 'Irure dolore voluptate voluptate dolor amet anim aliquip fugiat est Lorem in aliqua dolor.',
+                renk: 'r5'
+            },
+            {
+                aciklama: 'Irure dolore voluptate voluptate dolor amet anim aliquip fugiat est Lorem in aliqua dolor.',
+                renk: 'r6'
+            },
+            {
+                aciklama: 'Irure dolore voluptate voluptate dolor amet anim aliquip fugiat est Lorem in aliqua dolor.',
+                renk: 'r4'
+            },
+            {
+                aciklama: 'Irure dolore voluptate voluptate dolor amet anim aliquip fugiat est Lorem in aliqua dolor.',
+                renk: 'r1'
+            },
+        ]
+
         return (
-            <View style={S.notlarK}>
-                {this.not(0)}
-                {this.not(1)}
-                {this.not(2)}
+            <View style={aNotS.notlarK}>
+                <ScrollView>
+                    <View style={{ height: tlfnH.H(3) }} />
+
+                    {/*
+                        BUNLARI BÖYLE TEK TEK Mİ YAZACAĞIZ?
+                        ÇARE: FLATLIST, YA DA SCROLLVIEW + ARRAY.MAP(d => <Component />)
+                    */}
+                    {this.not(notlar[0], 0)}
+                    {this.not(notlar[1], 1)}
+                    {this.not(notlar[2], 2)}
+                    {this.not(notlar[3], 3)}
+                    {this.not(notlar[4], 4)}
+                    {this.not(notlar[5], 5)}
+                    {this.not(notlar[6], 6)}
+                    {this.not(notlar[7], 7)}
+
+                    <View style={{ height: tlfnH.H(3) }} />
+                </ScrollView>
             </View>
         );
     }
 
 
-    not(i) {
+    not(d, i) {
+        return (
+            <ViewA
+                key={i}
+                animation={'bounceIn'}
+                delay={350}
+                style={[aNotS.notK, { backgroundColor: temaH.notRenkleri[d.renk] }]}
+            >
+
+                <Text>{d.aciklama}</Text>
+
+                {this.notButonlar(d, i)}
+                {this.notRenkSec(d, i)}
+            </ViewA>
+        );
+    }
+
+
+    notButonlar(d, i) {
         const butonlarAcik = C.notButonlarAcik === i;
 
-        let okIkon;
-        if (C.notButonlarAcKapaYon && butonlarAcik) okIkon = '-270';
-        else if (butonlarAcik) okIkon = '-180';
-        else okIkon = '0';
-
         return (
-            <ViewA key={i} animation={'bounceIn'} delay={350} style={S.notK}>
-                <Text>Occaecat sit eiusmod pariatur ad consectetur. Occaecat sit eiusmod pariatur ad consectetur.</Text>
+            <View style={[aNotS.notButonlarK, { backgroundColor: temaH.notRenkleri[d.renk] }]}>
+                <TouchableOpacity style={aNotS.butonlarAcKapaButon} onPress={() => C.setNotButonlarAcik(i)}>
+                    <Ikon
+                        is={'AntDesign'} //ikonset
+                        i={butonlarAcik ? 'right' : 'left'} //ikon name
+                        c={'black'} //color
+                        s={tlfnH.W(7)} //size
+                    />
+                </TouchableOpacity>
 
-                <View style={S.notButonlarK}>
-                    <TouchableOpacity style={S.butonlarAcKapaButon} onPress={() => C.setNotButonlarAcik(i)}>
-                        <Ikon
-                            is={'AntDesign'} //ikonset
-                            i={'left'} //ikon name
-                            c={'black'} //color
-                            s={tlfnH.W(7)} //size
-                            rotate={okIkon}
-                        />
-                    </TouchableOpacity>
-
-                    <View style={[S.notButonlarAK, { display: butonlarAcik ? 'flex' : 'none' }]}>
-                        {this.notButon()}
-                        {this.notButon()}
-                        {this.notButon()}
-                        {this.notButon()}
-                    </View>
+                <View style={[aNotS.notButonlarAK, { display: butonlarAcik ? 'flex' : 'none' }]}>
+                    {this.notButon()}
+                    {this.notButon()}
+                    {this.notButon()}
+                    {this.notButon()}
                 </View>
-            </ViewA>
+            </View>
         );
     }
     notButon() {
         return (
-            <TouchableOpacity style={S.notButonK}>
+            <TouchableOpacity style={aNotS.notButonK}>
                 <Ikon
                     is={'AntDesign'} //ikonset
                     i={'delete'} //ikon name
@@ -89,12 +148,43 @@ class Anasayfa extends React.Component {
         );
     }
 
+    notRenkSec(d, i) {
+        const butonlarAcik = C.notButonlarAcik === i;
+
+        return (
+            <View
+                style={[
+                    aNotS.notRenkSecK,
+                    {
+                        width: butonlarAcik ? undefined : 0,
+                        marginLeft: butonlarAcik ? undefined : -tlfnH.W(15),
+                        backgroundColor: temaH.notRenkleri[d.renk]
+                    }
+                ]}
+            >
+                <ScrollView /* KAYDIRILABİLİR VİEW */
+                    horizontal //YATAY MOD AKTİF (horizontal={true} true değerler için sadece props ismini yazmak yeterli)
+                    showsHorizontalScrollIndicator={false}
+                >
+                    <TouchableOpacity style={[aNotS.notRenk, { backgroundColor: 'blue' }]} />
+                    <TouchableOpacity style={[aNotS.notRenk, { backgroundColor: 'red' }]} />
+                    <TouchableOpacity style={[aNotS.notRenk, { backgroundColor: 'yellow' }]} />
+                    <TouchableOpacity style={[aNotS.notRenk, { backgroundColor: 'pink' }]} />
+                    <TouchableOpacity style={[aNotS.notRenk, { backgroundColor: 'blue' }]} />
+                    <TouchableOpacity style={[aNotS.notRenk, { backgroundColor: 'red' }]} />
+                    <TouchableOpacity style={[aNotS.notRenk, { backgroundColor: 'yellow' }]} />
+                </ScrollView>
+            </View>
+        );
+    }
+
 
     render() {
         const sa = C.splashAktif;
 
         return (
             <View style={[S.K, sa && S.K2]}>
+                <Arkaplan source={require('../../assets/back2.jpg')} opacity={sa ? 0 : 0.8} />
 
                 {!sa && this.ustAlan()}
                 {!sa && this.notlar()}
