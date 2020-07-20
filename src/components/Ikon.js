@@ -13,14 +13,9 @@ import Octicons from 'react-native-vector-icons/Octicons';
 import Feather from 'react-native-vector-icons/Feather';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
-import { LayoutAnimation } from 'react-native';
 
 
 class Ikon extends Component {
-    componentDidUpdate() {
-        LayoutAnimation.easeInEaseOut();
-    }
-
     render() {
         const style = [
             !this.props.golgeYok && {
