@@ -1,18 +1,11 @@
 import { observable, action, decorate } from 'mobx';
 import { LayoutAnimation } from 'react-native';
 
-class anasayfaC {
-    cDMount = () => { //AÇILIŞTAN HEMEN SONRA
-        setTimeout(() => this.splashAktif = false, 2000);
-    }
-    cDUpdate = () => { //UPDATE'DEN HEMEN SONRA
-        LayoutAnimation.easeInEaseOut();
-    }
-    cWUnmount = () => { //KAPANIŞTAN HEMEN NÖCE
+class notlarC {
+    cDMount = () => { }
+    cDUpdate = () => { LayoutAnimation.easeInEaseOut(); }
+    cWUnmount = () => { }
 
-    }
-
-    splashAktif = true; //true: splash göster, false: asnasayfa goster
 
 
     notButonlarAcik = -1;
@@ -29,21 +22,20 @@ class anasayfaC {
 }
 
 decorate(
-    anasayfaC,
+    notlarC,
     {
         cDMount: action,
         cDUpdate: action,
         cWUnmount: action,
 
-        splashAktif: observable,
-
         notButonlarAcik: observable,
         notButonlarAcKapaYon: observable,
         setNotButonlarAcik: action,
+
 
         set: action,
     }
 );
 
 
-export default new anasayfaC();
+export default new notlarC();

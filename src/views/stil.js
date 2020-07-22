@@ -108,3 +108,19 @@ export const anasayfaNotS = StyleSheet.create({
 		marginLeft: 5,
 	}
 });
+
+export const anasayfaUstBolgeS = StyleSheet.create({
+	ustAlanK: {
+		minHeight: W(20) + H(4),
+		backgroundColor: R.r1,
+		paddingLeft: W(25),
+		paddingRight: 15,
+		justifyContent: 'center',
+	},
+	ustAlanY: {
+		fontWeight: 'bold',
+		fontSize: 15,
+		color: R.r2,
+		textAlign: 'right'
+	},
+});
