@@ -20,30 +20,22 @@ export const anasayfaS = StyleSheet.create({
 	K2: {
 		justifyContent: 'center',
 		alignItems: 'center'
+	}
+});
+
+export const splashS = StyleSheet.create({
+	K: { //splash ekranı container
+		justifyContent: 'center',
+		alignItems: 'center',
+		flex: 1
 	},
-
-
-	logoK: {
+	K2: { //anasayfa için splash ekranı container
 		position: 'absolute',
 		left: W(2),
 		top: H(2)
 	},
-
-
-	ustAlanK: {
-		minHeight: W(20) + H(4),
-		backgroundColor: R.r1,
-		paddingLeft: W(25),
-		paddingRight: 15,
-		justifyContent: 'center',
-	},
-	ustAlanY: {
-		fontWeight: 'bold',
-		fontSize: 15,
-		color: R.r2,
-		textAlign: 'right'
-	},
 });
+
 export const anasayfaNotS = StyleSheet.create({
 	notlarK: { //tüm notların içinde bulunduğu View
 		flex: 1
@@ -110,8 +102,9 @@ export const anasayfaNotS = StyleSheet.create({
 });
 
 export const anasayfaUstBolgeS = StyleSheet.create({
-	ustAlanK: {
+	K: {
 		minHeight: W(20) + H(4),
+		width: W(100),
 		backgroundColor: R.r1,
 		paddingLeft: W(25),
 		paddingRight: 15,

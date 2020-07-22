@@ -15,7 +15,7 @@ class UstBolge extends React.Component {
 
     render() {
         return (
-            <View style={S.ustAlanK}>
+            <View style={S.K}>
                 <Text style={S.ustAlanY}>lorem ipsum dolar sit amet</Text>
                 <Text style={S.ustAlanY}>lorem ipsum dolar</Text>
                 <Text style={S.ustAlanY}>lorem ipsum dolar sit</Text>

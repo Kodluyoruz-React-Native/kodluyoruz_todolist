@@ -7,7 +7,7 @@ import { observer } from 'mobx-react';
 import Anasayfa from './anasayfa/Anasayfa';
 
 import temaH from '../helper/temaH';
-import anasayfaC from '../controllers/anasayfa/anasayfaC';
+
 import splashC from '../controllers/splashC';
 
 const Stack = createStackNavigator();
@@ -27,7 +27,7 @@ class App extends React.Component {
         return (
             <>
                 <StatusBar
-                    backgroundColor={splashC.splashAktif ? 'transparent' : temaH.renkler.r1}
+                    backgroundColor={splashC.durum === 3 ? temaH.renkler.r1 : 'transparent'}
                     barStyle={'dark-content'}
                 />
 

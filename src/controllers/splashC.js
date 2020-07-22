@@ -3,12 +3,13 @@ import { LayoutAnimation } from 'react-native';
 
 class splashC {
     cDMount = () => {
-        setTimeout(() => this.splashAktif = false, 2000);
+        setTimeout(() => this.durum = 2, 2000);
     }
     cDUpdate = () => { LayoutAnimation.easeInEaseOut(); }
     cWUnmount = () => { }
 
-    splashAktif = true; //true: splash göster, false: asnasayfa goster
+
+    durum = 0; //0: splash, 1: oturumaç, 2: üyeol, 3:anasayfa
 
 
     set = (k, v) => this[k] = v;
@@ -21,7 +22,7 @@ decorate(
         cDUpdate: action,
         cWUnmount: action,
 
-        splashAktif: observable,
+        durum: observable,
 
         set: action,
     }

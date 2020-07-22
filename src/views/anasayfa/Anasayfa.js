@@ -22,14 +22,14 @@ class Anasayfa extends React.Component {
 
 
     render() {
-        const sa = splashC.splashAktif;
+        const durum = splashC.durum;
 
         return (
-            <View style={[S.K, sa && S.K2]}>
-                <Arkaplan source={require('../../../assets/back2.jpg')} opacity={sa ? 0 : 0.8} />
+            <View style={[S.K, durum && S.K2]}>
+                <Arkaplan source={require('../../../assets/back2.jpg')} opacity={durum === 0 ? 0 : 0.8} />
 
                 {
-                    !sa &&
+                    durum === 3 &&
                     <>
                         <UstBolge />
                         <Notlar />
