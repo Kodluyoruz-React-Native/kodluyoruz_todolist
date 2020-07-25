@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "777815799822",
+    "firebase_url": "https://todolist-kodluyoruz.firebaseio.com",
+    "project_id": "todolist-kodluyoruz",
+    "storage_bucket": "todolist-kodluyoruz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:777815799822:android:45acd72ffee24ca0f7645f",
+        "android_client_info": {
+          "package_name": "com.kodluyoruztodolist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "777815799822-fkr0htrkhqoc4ravj7ous4rc7iamd03j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGpNkdEpoNdKdhQXxwbq4C5aXDJ3vFhik"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "777815799822-fkr0htrkhqoc4ravj7ous4rc7iamd03j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
