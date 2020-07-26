@@ -117,3 +117,28 @@ export const anasayfaUstBolgeS = StyleSheet.create({
 		textAlign: 'right'
 	},
 });
+
+export const oturumS = StyleSheet.create({
+	K: {
+		width: W(100),
+		marginTop: 25,
+		justifyContent: 'center',
+		alignItems: 'center'
+	},
+
+	input: {
+		width: W(75),
+	},
+	buton: {
+		width: W(65)
+	},
+	butonKlavyeAcik: {
+		width: W(100)
+	},
+	uyeOlButon: {
+		marginTop: '20%',
+	},
+	uyeOlButonY: {
+		textDecorationLine: 'underline'
+	}
+});
