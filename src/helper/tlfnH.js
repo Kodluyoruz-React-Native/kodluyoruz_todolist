@@ -16,7 +16,7 @@ class tlfnH {
 
 
     klavye = { d: '', h: 0 };
-    klavyeAcildi = d => this.klavye = { durum: true, h: d.endCoordinates.height };
+    klavyeAcildi = d => this.klavye = { d: true, h: d.endCoordinates.height };
     klavyeKapandi = d => this.klavye = { d: false, h: 0 };
 }
 
