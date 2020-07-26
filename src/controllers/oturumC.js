@@ -1,5 +1,7 @@
 import { observable, action, decorate } from 'mobx';
 import splashC from './splashC';
+import fbH from '../helper/fbH';
+import uyelikM from '../models/uyelikM';
 
 class oturumC {
     cDMount = async () => { }
@@ -18,8 +20,20 @@ class oturumC {
 
 
     loading = false;
-    OTURUM = async () => { }
-    uyeOl = async () => { }
+    OTURUM = async () => {
+        if (splashC.durum === 1) this.oturumAc();
+        else if (splashC.durum === 2) this.ekleUye();
+    }
+    ekleUye = async () => {
+        const x = await uyelikM.ekleUye();
+
+        if (x.sonuc) { //üye başarıyla eklendi
+            console.log(x.veri);
+        }
+        else { //üye eklenirken hata oldu (x.hata)
+            console.log(x.hata)
+        }
+    }
     oturumAc = async () => { }
 
 
@@ -53,7 +67,7 @@ decorate(
         loading: observable,
         OTURUM: action,
         oturumAc: action,
-        uyeOl: action,
+        ekleUye: action,
 
         uyelikKapat: action,
 

@@ -15,9 +15,9 @@ class tlfnH {
     ios = Platform.OS === 'ios';
 
 
-    klavye = { d: '', h: 0 };
-    klavyeAcildi = d => this.klavye = { d: true, h: d.endCoordinates.height };
-    klavyeKapandi = d => this.klavye = { d: false, h: 0 };
+    klavye = { durum: false, h: 0 };
+    klavyeAcildi = d => this.klavye = { durum: true, h: d.endCoordinates.height };
+    klavyeKapandi = () => this.klavye = { durum: false, h: 0 };
 }
 
 decorate(
