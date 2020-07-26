@@ -7,7 +7,7 @@ class splashC {
         Keyboard.addListener('keyboardDidShow', tlfnH.klavyeAcildi);
         Keyboard.addListener('keyboardDidHide', tlfnH.klavyeKapandi);
 
-        setTimeout(() => this.durum = 2, 2000);
+        setTimeout(() => this.durum = 1, 2000);
     }
     cDUpdate = () => { LayoutAnimation.easeInEaseOut(); }
     cWUnmount = () => { }

@@ -6,6 +6,8 @@ import Resim from '../components/Resim';
 
 import tlfnH from '../helper/tlfnH';
 
+import Oturum from './Oturum';
+
 import C from '../controllers/splashC';
 import splashC from '../controllers/splashC';
 
@@ -17,16 +19,6 @@ class Splash extends React.Component {
     componentDidMount = C.cDMount;
     componentDidUpdate = C.cDUpdate;
     componentWillUnmount = C.cWUnmount;
-
-
-    uyelik() {
-        return (
-            <View style={{ height: 250, borderWidth: 1, borderColor: 'red' }}>
-
-            </View>
-        );
-    }
-
 
     render() {
         const durum = splashC.durum;
@@ -46,7 +38,7 @@ class Splash extends React.Component {
                     height={tlfnH.W(logoH)}
                 />
 
-                {durum === 1 || durum === 2 && this.uyelik()}
+                {(durum === 1 || durum === 2) && <Oturum />}
             </View>
         );
     }
