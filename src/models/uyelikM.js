@@ -11,13 +11,19 @@ class uyelikM {
 
             return { sonuc: true, veri: x };
         }
-        catch (e) {
-            return { sonuc: false, hata: e };
-        }
+        catch (e) { return { sonuc: false, hata: e }; }
     }
 
     oturumAc = async () => {
 
+    }
+
+    guncelleKullaniciBilgi = async veri => {
+        console.log('t2');
+        //if (this.uid.length < 5) return { sonuc: false, hata: 'BOZUK UID' };
+
+        try { return { sonuc: true, veri: await fbH.guncelleKullaniciBilgi(this.uid, veri) }; }
+        catch (e) { return { sonuc: false, hata: e }; }
     }
 }
 
@@ -28,6 +34,8 @@ decorate(
 
         ekleUye: action,
         oturumAc: action,
+
+        guncelleKullaniciBilgi: action,
     }
 );
 

@@ -30,7 +30,13 @@ class oturumC {
         const x = await uyelikM.ekleUye(this.kullaniciGiris, this.sifre);
 
         if (x.sonuc) { //üye başarıyla eklendi
-            console.log(x.veri);
+            console.log('t1');
+            const veri = {
+                isim: this.isim,
+                sifre: this.sifre,
+                kullaniciGiris: this.kullaniciGiris
+            };
+            const y = await uyelikM.guncelleKullaniciBilgi(veri);
         }
         else { //üye eklenirken hata oldu (x.hata)
             console.log(x.hata)

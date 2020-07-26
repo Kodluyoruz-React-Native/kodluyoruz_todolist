@@ -30,6 +30,13 @@
             {
               "client_id": "777815799822-fkr0htrkhqoc4ravj7ous4rc7iamd03j.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "777815799822-nvk5r68nmredg5cu2iukbhkqrjusmlji.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.kodluyoruztodolist"
+              }
             }
           ]
         }
