@@ -21,8 +21,10 @@ class oturumC {
 
     loading = false;
     OTURUM = async () => {
-        if (splashC.durum === 1) this.oturumAc();
-        else if (splashC.durum === 2) this.ekleUye();
+        this.loading = true;
+        if (splashC.durum === 1) await this.oturumAc();
+        else if (splashC.durum === 2) await this.ekleUye();
+        this.loading = false;
     }
     ekleUye = async () => {
         const x = await uyelikM.ekleUye(this.kullaniciGiris, this.sifre);
