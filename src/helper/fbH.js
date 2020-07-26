@@ -27,6 +27,14 @@ class fbH {
             .then(() => olumlu(true)) //KAYDEDEBİLİRSE
             .catch(e => olumsuz(e)); //KAYDEDEMEZSE
     });
+
+
+    getirKullaniciBilgi = uid => new Promise((olumlu, olumsuz) => {
+        db.ref(`/KULLANICILAR/${uid}`) //GETİRİLECEK VERİ
+            .once('value')
+            .then(d => olumlu(d.val())) //GETİREBİLİRSE
+            .catch(e => olumsuz(e)); //GETİREMEZSE
+    });
 }
 
 decorate(
@@ -36,6 +44,7 @@ decorate(
         oturumAc: action,
 
         guncelleKullaniciBilgi: action,
+        getirKullaniciBilgi: action,
     }
 );
 
