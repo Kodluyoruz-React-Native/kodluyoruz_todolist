@@ -1,9 +1,7 @@
 import React from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import { observer } from 'mobx-react';
 import { Input, Button } from 'react-native-elements';
-
-import Arkaplan from '../components/Arkaplan';
 
 import C from '../controllers/oturumC';
 import splashC from '../controllers/splashC';
@@ -16,8 +14,6 @@ class Oturum extends React.Component {
     componentDidMount = C.cDMount;
     componentDidUpdate = C.cDUpdate;
     componentWillUnmount = C.cWUnmount;
-
-
 
     render() {
         const durum = splashC.durum;

@@ -1,8 +1,12 @@
 import { observable, action, decorate } from 'mobx';
-import { LayoutAnimation } from 'react-native';
+import { LayoutAnimation, Keyboard } from 'react-native';
+import tlfnH from '../helper/tlfnH';
 
 class splashC {
     cDMount = () => {
+        Keyboard.addListener('keyboardDidShow', tlfnH.klavyeAcildi);
+        Keyboard.addListener('keyboardDidHide', tlfnH.klavyeKapandi);
+
         setTimeout(() => this.durum = 2, 2000);
     }
     cDUpdate = () => { LayoutAnimation.easeInEaseOut(); }

@@ -13,6 +13,11 @@ class tlfnH {
 
     android = Platform.OS === 'android';
     ios = Platform.OS === 'ios';
+
+
+    klavye = { d: '', h: 0 };
+    klavyeAcildi = d => this.klavye = { durum: true, h: d.endCoordinates.height };
+    klavyeKapandi = d => this.klavye = { d: false, h: 0 };
 }
 
 decorate(
@@ -26,6 +31,10 @@ decorate(
 
         android: observable,
         ios: observable,
+
+        klavye: observable,
+        klavyeAcildi: action,
+        klavyeKapandi: action
     }
 );
 
