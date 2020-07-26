@@ -25,7 +25,7 @@ class oturumC {
         else if (splashC.durum === 2) this.ekleUye();
     }
     ekleUye = async () => {
-        const x = await uyelikM.ekleUye();
+        const x = await uyelikM.ekleUye(this.kullaniciGiris, this.sifre);
 
         if (x.sonuc) { //üye başarıyla eklendi
             console.log(x.veri);

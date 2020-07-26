@@ -3,7 +3,7 @@ import auth from '@react-native-firebase/auth';
 
 class fbH {
     ekleUye = (kullaniciGiris, sifre) => new Promise((olumlu, olumsuz) => {
-        utah().createUserWithEmailAndPassword(kullaniciGiris, sifre)
+        auth().createUserWithEmailAndPassword(kullaniciGiris, sifre)
             .then(d => olumlu(d))
             .catch(e => olumsuz(e));
     });

@@ -1,12 +1,8 @@
 import { action, decorate } from 'mobx';
 import fbH from '../helper/fbH';
-import oturumC from '../controllers/oturumC';
 
 class uyelikM {
-    ekleUye = async () => {
-        const kullaniciGiris = oturumC.kullaniciGiris;
-        const sifre = oturumC.sifre;
-
+    ekleUye = async (kullaniciGiris, sifre) => {
         try {
             const x = await fbH.ekleUye(kullaniciGiris, sifre);
             return { sonuc: true, veri: x };
