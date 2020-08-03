@@ -9,6 +9,7 @@ import Anasayfa from './anasayfa/Anasayfa';
 import temaH from '../helper/temaH';
 
 import splashC from '../controllers/splashC';
+import Footer from '../components/Footer';
 
 const Stack = createStackNavigator();
 
@@ -32,6 +33,8 @@ class App extends React.Component {
                 />
 
                 {this.navigasyon()}
+
+                {(splashC.durum !== 0 && splashC.durum !== 1 && splashC.durum !== 2) && <Footer />}
             </>
         );
     }
