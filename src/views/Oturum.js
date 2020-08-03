@@ -32,7 +32,7 @@ class Oturum extends React.Component {
                 <ScrollView>
                     <Input
                         placeholder={'Kullanıcı adı veya E-Posta'}
-                        leftIcon={<Ikon is={'MaterialCommunityIcons'} i={'account'} c={'black'} />}
+                        leftIcon={<Ikon is={'MaterialCommunityIcons'} i={'email-open'} c={'black'} />}
                         containerStyle={S.input}
                         value={C.kullaniciGiris}
                         keyboardType={'email-address'}
@@ -44,12 +44,22 @@ class Oturum extends React.Component {
                         durum === 2 &&
                         <Input
                             placeholder={'Adınız soyadınız'}
-                            leftIcon={
-                                <Ikon is={'MaterialCommunityIcons'} i={'account'} c={'black'} />
-                            }
+                            leftIcon={<Ikon is={'MaterialCommunityIcons'} i={'account'} c={'black'} />}
                             containerStyle={S.input}
                             value={C.isim}
                             onChangeText={d => C.set('isim', d)}
+                            maxLength={50}
+                        />
+                    }
+
+                    {
+                        durum === 2 &&
+                        <Input
+                            placeholder={'kullanıcı adınız'}
+                            leftIcon={<Ikon is={'MaterialCommunityIcons'} i={'account'} c={'black'} />}
+                            containerStyle={S.input}
+                            value={C.kullaniciAdi}
+                            onChangeText={d => C.set('kullaniciAdi', d)}
                             maxLength={50}
                         />
                     }

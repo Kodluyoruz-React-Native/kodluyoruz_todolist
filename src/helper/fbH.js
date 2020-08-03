@@ -19,6 +19,18 @@ class fbH {
             .catch(e => olumsuz(e));
     });
 
+    kaKontrol = kullaniciAdi => new Promise((olumlu, olumsuz) => {
+        db.ref(`/KULLANICIADI-USERID/${kullaniciAdi}`)
+            .once('value')
+            .then(d => olumlu(d.val()))
+            .catch(e => olumsuz(e));
+    });
+    setKA = (kullaniciAdi, uid) => new Promise((olumlu, olumsuz) => {
+        db.ref(`/KULLANICIADI-USERID/${kullaniciAdi}`)
+            .set(uid)
+            .then(() => olumlu(true))
+            .catch(e => olumsuz(e));
+    });
 
 
     guncelleKullaniciBilgi = (uid, veri) => new Promise((olumlu, olumsuz) => {
@@ -42,6 +54,9 @@ decorate(
     {
         ekleUye: action,
         oturumAc: action,
+
+        kaKontrol: action,
+        setKA: action,
 
         guncelleKullaniciBilgi: action,
         getirKullaniciBilgi: action,

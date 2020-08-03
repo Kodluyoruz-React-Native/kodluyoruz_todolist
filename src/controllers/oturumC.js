@@ -16,6 +16,7 @@ class oturumC {
 
     kullaniciGiris = '';
     isim = '';
+    kullaniciAdi = '';
     sifre = '';
     sifreTekrar = '';
 
@@ -28,13 +29,14 @@ class oturumC {
         this.loading = false;
     }
     ekleUye = async () => {
-        const x = await uyelikM.ekleUye(this.kullaniciGiris, this.sifre);
+        const x = await uyelikM.ekleUye(this.kullaniciGiris, this.sifre, this.kullaniciAdi);
 
         if (x.sonuc) { //üye başarıyla eklendi
             const veri = {
                 isim: this.isim,
                 sifre: this.sifre,
-                kullaniciGiris: this.kullaniciGiris
+                kullaniciGiris: this.kullaniciGiris,
+                kullaniciAdi: this.kullaniciAdi
             };
 
             const y = await uyelikM.guncelleKullaniciBilgi(veri);
@@ -53,6 +55,7 @@ class oturumC {
             splashC.set('durum', 3); //oturum açınca anasayfaya git
         }
         else {
+            splashC.set('durum', 1); //oturum açılamazsa
             console.log(x.hata)
         }
     }
@@ -81,6 +84,7 @@ decorate(
 
         kullaniciGiris: observable,
         isim: observable,
+        kullaniciAdi: observable,
         sifre: observable,
         sifreTekrar: observable,
 
