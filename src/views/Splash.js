@@ -9,7 +9,6 @@ import tlfnH from '../helper/tlfnH';
 import Oturum from './Oturum';
 
 import C from '../controllers/splashC';
-import splashC from '../controllers/splashC';
 
 
 import { splashS as S } from './stil';
@@ -21,7 +20,7 @@ class Splash extends React.Component {
     componentWillUnmount = C.cWUnmount;
 
     render() {
-        const durum = splashC.durum;
+        const durum = C.durum;
 
         let logoH;
 
