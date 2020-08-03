@@ -69,12 +69,11 @@ export const anasayfaS = StyleSheet.create({
 		padding: 10,
 		justifyContent: 'center',
 		alignItems: 'center',
-		flex: tlfnH.klavye.durum ? 1 : undefined,
-		margin: tlfnH.klavye.durum ? -22 : null,
-		marginBottom: tlfnH.ios ? tlfnH.klavye.h - tlfnH.sbhi() : undefined,
-		borderRadius: tlfnH.klavye.durum ? 0 : 10,
-		backgroundColor: 'white'
+		backgroundColor: 'white',
+		//borderWidth: 2,
+		borderColor: R.r1
 	},
+	notEkleModalKapatB: { position: 'absolute', top: 3, right: 5 },
 	modalBaslik: {
 		fontSize: 20,
 		fontWeight: 'bold',

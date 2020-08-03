@@ -10,6 +10,7 @@ class anasayfaC {
     cWUnmount = () => { //KAPANIŞTAN HEMEN NÖCE
     }
 
+    notekleModal = false;
 
     set = (k, v) => this[k] = v;
 }
@@ -22,8 +23,7 @@ decorate(
         cDUpdate: action,
         cWUnmount: action,
 
-        x: action,
-        y: action,
+        notekleModal: observable,
 
         set: action,
     }

@@ -1,7 +1,10 @@
 import React from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 
+import anasayfaC from '../controllers/anasayfa/anasayfaC';
+
 import { footerS as S } from '../views/stil';
+
 import Ikon from './Ikon';
 import temaH from '../helper/temaH';
 
@@ -27,9 +30,9 @@ const Footer = () => {
             </View>
 
             <View style={S.anabutonK}>
-                <View style={S.anabutonAK}>
+                <TouchableOpacity style={S.anabutonAK} onPress={() => anasayfaC.set('notekleModal', true)}>
                     <Ikon is={'MaterialCommunityIcons'} i={'lead-pencil'} s={40} c={temaH.renkler.r2} />
-                </View>
+                </TouchableOpacity>
             </View>
         </View>
     );

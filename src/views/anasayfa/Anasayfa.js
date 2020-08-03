@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, TextInput } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput, TouchableOpacityBase } from 'react-native';
 import { observer } from 'mobx-react';
 import Modal from 'react-native-modal';
 
@@ -15,6 +15,7 @@ import Splash from '../Splash';
 
 import Arkaplan from '../../components/Arkaplan';
 import Ikon from '../../components/Ikon';
+import tlfnH from '../../helper/tlfnH';
 
 
 class Anasayfa extends React.Component {
@@ -26,12 +27,24 @@ class Anasayfa extends React.Component {
     notEkleModal() {
         return (
             <Modal
-                animationIn={'zoomIn'}
-                animationOut={'zoomOut'}
                 backdropOpacity={0.5}
-                isVisible={false}
+                isVisible={C.notekleModal}
             >
-                <View style={S.notEkleModalK}>
+                <View style={[
+                    S.notEkleModalK,
+                    {
+                        flex: tlfnH.klavye.durum ? 1 : undefined,
+                        margin: tlfnH.klavye.durum ? -22 : null,
+                        marginBottom: tlfnH.ios ? tlfnH.klavye.h - tlfnH.sbhi() : undefined,
+                        borderRadius: tlfnH.klavye.durum ? 0 : 10,
+                    }]}
+                >
+                    <Arkaplan source={require('../../../assets/back1.jpg')} />
+
+                    <TouchableOpacity style={S.notEkleModalKapatB} onPress={() => C.set('notekleModal', false)}>
+                        <Ikon is={'MaterialCommunityIcons'} i={'close'} c={temaH.renkler.r2} s={24} />
+                    </TouchableOpacity>
+
                     <Text style={S.modalBaslik}>not Oluştur</Text>
 
                     <TextInput
@@ -71,7 +84,7 @@ class Anasayfa extends React.Component {
 
         return (
             <View style={[S.K, durum && S.K2]}>
-                <Arkaplan source={require('../../../assets/back2.jpg')} opacity={durum === 0 ? 0 : 0.8} />
+                <Arkaplan source={require('../../../assets/back1.jpg')} opacity={durum === 0 ? 0 : 0.8} />
 
                 {
                     durum === 3 &&
