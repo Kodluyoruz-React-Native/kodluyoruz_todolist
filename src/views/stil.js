@@ -11,6 +11,48 @@ const W = tlfnH.W;
 const H = tlfnH.H;
 const R = temaH.renkler;
 
+export const footerS = StyleSheet.create({
+	K: {
+		width: W(100),
+		//borderWidth: 1,
+		//borderColor: 'red',
+		flexDirection: 'row',
+		alignItems: 'flex-end',
+		justifyContent: 'center'
+	},
+	arkaPlan: {
+		position: 'absolute',
+		backgroundColor: R.r1,
+		height: 48,
+		left: 0,
+		right: 0
+	},
+	solK: {
+		flex: 1,
+		//borderWidth: 1,
+		flexDirection: 'row',
+		justifyContent: 'space-evenly',
+		alignItems: 'center',
+		height: 48,
+		paddingRight: 20,
+		backgroundColor: R.r1,
+	},
+	sagK: {
+		paddingRight: 0,
+		paddingLeft: 20
+	},
+
+	anabutonK: {
+		backgroundColor: R.r1,
+		borderRadius: 100,
+		position: 'absolute'
+	},
+	anabutonAK: {
+		padding: 10,
+		borderRadius: 100
+	},
+});
+
 
 export const anasayfaS = StyleSheet.create({
 	K: {
@@ -20,7 +62,53 @@ export const anasayfaS = StyleSheet.create({
 	K2: {
 		justifyContent: 'center',
 		alignItems: 'center'
+	},
+
+	//#region NOT EKLE
+	notEkleModalK: {
+		padding: 10,
+		justifyContent: 'center',
+		alignItems: 'center',
+		flex: tlfnH.klavye.durum ? 1 : undefined,
+		margin: tlfnH.klavye.durum ? -22 : null,
+		marginBottom: tlfnH.ios ? tlfnH.klavye.h - tlfnH.sbhi() : undefined,
+		borderRadius: tlfnH.klavye.durum ? 0 : 10,
+		backgroundColor: 'white'
+	},
+	modalBaslik: {
+		fontSize: 20,
+		fontWeight: 'bold',
+		color: R.r2
+	},
+	baslikInput: {
+		borderBottomWidth: 1,
+		borderColor: '#00000055',
+		marginBottom: 10,
+		width: '90%',
+	},
+	notInputK: {
+		width: '90%',
+		borderWidth: 1,
+		borderColor: '#00000055',
+		//borderWidth: 1,
+		//borderColor: 'red'
+	},
+	notInput: {
+		borderRadius: 3,
+		paddingHorizontal: 10,
+		minHeight: H(10),
+		maxHeight: H(15),
+		marginBottom: 3,
+	},
+	butonlarK: {
+		flexDirection: 'row',
+		justifyContent: 'flex-end',
+	},
+	buton: {
+		marginRight: 3,
+		marginBottom: 3
 	}
+	//#endregion
 });
 
 export const splashS = StyleSheet.create({
