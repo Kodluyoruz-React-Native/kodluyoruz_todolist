@@ -39,8 +39,6 @@ class Anasayfa extends React.Component {
                         borderRadius: tlfnH.klavye.durum ? 0 : 10,
                     }]}
                 >
-                    <Arkaplan source={require('../../../assets/back1.jpg')} />
-
                     <TouchableOpacity style={S.notEkleModalKapatB} onPress={() => C.set('notekleModal', false)}>
                         <Ikon is={'MaterialCommunityIcons'} i={'close'} c={temaH.renkler.r2} s={24} />
                     </TouchableOpacity>
@@ -84,8 +82,6 @@ class Anasayfa extends React.Component {
 
         return (
             <View style={[S.K, durum && S.K2]}>
-                <Arkaplan source={require('../../../assets/back1.jpg')} opacity={durum === 0 ? 0 : 0.8} />
-
                 {
                     durum === 3 &&
                     <>

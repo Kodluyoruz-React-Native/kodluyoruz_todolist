@@ -7,14 +7,14 @@ const auth = auth_();
 const db = database();
 
 class fbH {
-    ekleUye = (kullaniciGiris, sifre) => new Promise((olumlu, olumsuz) => {
-        auth.createUserWithEmailAndPassword(kullaniciGiris, sifre)
+    ekleUye = (email, sifre) => new Promise((olumlu, olumsuz) => {
+        auth.createUserWithEmailAndPassword(email, sifre)
             .then(d => olumlu(d))
             .catch(e => olumsuz(e));
     });
 
-    oturumAc = (kullaniciGiris, sifre) => new Promise((olumlu, olumsuz) => {
-        auth.signInWithEmailAndPassword(kullaniciGiris, sifre)
+    oturumAc = (email, sifre) => new Promise((olumlu, olumsuz) => {
+        auth.signInWithEmailAndPassword(email, sifre)
             .then(d => olumlu(d))
             .catch(e => olumsuz(e));
     });

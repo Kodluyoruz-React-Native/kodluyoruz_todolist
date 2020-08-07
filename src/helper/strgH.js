@@ -2,14 +2,14 @@ import { observable, action, decorate } from 'mobx';
 import AsyncStorage from '@react-native-community/async-storage';
 
 class strgH { //ASYNC-STORAGE
-	kaydetOturumBilgileri = async (kullaniciGiris, sifre, oturumDurumu) => {
-		await this.kaydet('kullaniciGiris', kullaniciGiris);
+	kaydetOturumBilgileri = async (email, sifre, oturumDurumu) => {
+		await this.kaydet('email', email);
 		await this.kaydet('sifre', sifre);
 		await this.kaydet('oturumDurumu', oturumDurumu);
 	}
 
 	getirOturumBilgileri = async () => ({
-		kullaniciGiris: await this.getir('kullaniciGiris'),
+		email: await this.getir('email'),
 		sifre: await this.getir('sifre'),
 		oturumDurumu: await this.getir('oturumDurumu')
 	});

@@ -14,7 +14,7 @@ class oturumC {
     uyeOlButon = () => { splashC.set('durum', splashC.durum === 1 ? 2 : 1); }
 
 
-    kullaniciGiris = '';
+    email = '';
     isim = '';
     kullaniciAdi = '';
     sifre = '';
@@ -29,13 +29,13 @@ class oturumC {
         this.loading = false;
     }
     ekleUye = async () => {
-        const x = await uyelikM.ekleUye(this.kullaniciGiris, this.sifre, this.kullaniciAdi);
+        const x = await uyelikM.ekleUye(this.email, this.sifre, this.kullaniciAdi);
 
         if (x.sonuc) { //üye başarıyla eklendi
             const veri = {
                 isim: this.isim,
                 sifre: this.sifre,
-                kullaniciGiris: this.kullaniciGiris,
+                email: this.email,
                 kullaniciAdi: this.kullaniciAdi
             };
 
@@ -48,10 +48,10 @@ class oturumC {
         }
     }
     oturumAc = async () => {
-        const x = await uyelikM.oturumAc(this.kullaniciGiris, this.sifre);
+        const x = await uyelikM.oturumAc(this.email, this.sifre);
 
         if (x.sonuc) {
-            strgH.kaydetOturumBilgileri(this.kullaniciGiris, this.sifre, 'acik');
+            strgH.kaydetOturumBilgileri(this.email, this.sifre, 'acik');
             splashC.set('durum', 3); //oturum açınca anasayfaya git
         }
         else {
@@ -82,7 +82,7 @@ decorate(
 
         uyeOlButon: action,
 
-        kullaniciGiris: observable,
+        email: observable,
         isim: observable,
         kullaniciAdi: observable,
         sifre: observable,

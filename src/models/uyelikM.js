@@ -5,11 +5,11 @@ import { Alert } from 'react-native';
 class uyelikM {
     uid = '';
     isim = '';
-    kullaniciGiris = '';
+    email = '';
     kullaniciAdi = '';
 
 
-    ekleUye = async (kullaniciGiris, sifre, kullaniciAdi) => {
+    ekleUye = async (email, sifre, kullaniciAdi) => {
         try {
             const kaKontrol = await fbH.kaKontrol(kullaniciAdi);
             console.log(kaKontrol);
@@ -26,7 +26,7 @@ class uyelikM {
                 return { sonuc: false, hata: '3' };
             }
 
-            const x = await fbH.ekleUye(kullaniciGiris, sifre);
+            const x = await fbH.ekleUye(email, sifre);
             const y = await fbH.setKA(kullaniciAdi, x.user.uid);
 
             this.uid = x.user.uid;
@@ -37,14 +37,14 @@ class uyelikM {
         catch (e) { return { sonuc: false, hata: e }; }
     }
 
-    oturumAc = async (kullaniciGiris, sifre) => {
+    oturumAc = async (email, sifre) => {
         try {
-            const x = await fbH.oturumAc(kullaniciGiris, sifre);
+            const x = await fbH.oturumAc(email, sifre);
             this.uid = x.user.uid;
 
             const kullaniciBilgi = await fbH.getirKullaniciBilgi(this.uid);
             this.isim = kullaniciBilgi.isim;
-            this.kullaniciGiris = kullaniciBilgi.kullaniciGiris;
+            this.email = kullaniciBilgi.email;
             this.kullaniciAdi = kullaniciBilgi.kullaniciAdi;
 
             return { sonuc: true, veri: kullaniciBilgi };

@@ -31,7 +31,7 @@ class Oturum extends React.Component {
             <View style={[S.K, durum === 2 && tlfnH.klavye.durum && { flex: 1 }]}>
                 <ScrollView showsVerticalScrollIndicator={false}>
                     <Input
-                        placeholder={'Kullanıcı adı veya E-Posta'}
+                        placeholder={'E-Posta'}
                         leftIcon={<Ikon is={'MaterialCommunityIcons'} i={'email-open'} c={'black'} />}
                         containerStyle={S.input}
                         value={C.email}

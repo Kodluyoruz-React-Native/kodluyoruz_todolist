@@ -11,7 +11,7 @@ class splashC {
 
         const x = await strgH.getirOturumBilgileri();
         if (x && x.oturumDurumu === 'acik') {
-            oturumC.set('kullaniciGiris', x.kullaniciGiris);
+            oturumC.set('email', x.email);
             oturumC.set('sifre', x.sifre);
             await oturumC.oturumAc();
         }
