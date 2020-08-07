@@ -114,6 +114,7 @@ export const splashS = StyleSheet.create({
 	K: { //splash ekranı container
 		justifyContent: 'center',
 		alignItems: 'center',
+		width: '100%',
 		flex: 1
 	},
 	K2: { //anasayfa için splash ekranı container
@@ -207,7 +208,7 @@ export const anasayfaUstBolgeS = StyleSheet.create({
 
 export const oturumS = StyleSheet.create({
 	K: {
-		width: W(100),
+		width: '100%',
 		marginTop: 25,
 		justifyContent: 'center',
 		alignItems: 'center'

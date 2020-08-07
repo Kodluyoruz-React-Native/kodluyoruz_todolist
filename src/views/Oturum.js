@@ -28,15 +28,15 @@ class Oturum extends React.Component {
         };
 
         return (
-            <View style={S.K}>
-                <ScrollView>
+            <View style={[S.K, durum === 2 && tlfnH.klavye.durum && { flex: 1 }]}>
+                <ScrollView showsVerticalScrollIndicator={false}>
                     <Input
                         placeholder={'Kullanıcı adı veya E-Posta'}
                         leftIcon={<Ikon is={'MaterialCommunityIcons'} i={'email-open'} c={'black'} />}
                         containerStyle={S.input}
-                        value={C.kullaniciGiris}
+                        value={C.email}
                         keyboardType={'email-address'}
-                        onChangeText={d => C.set('kullaniciGiris', d)}
+                        onChangeText={d => C.set('email', d)}
                         maxLength={60}
                     />
 

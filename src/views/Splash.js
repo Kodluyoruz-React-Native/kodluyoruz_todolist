@@ -31,7 +31,13 @@ class Splash extends React.Component {
 
 
         return (
-            <View style={[S.K, durum === 3 && S.K2]}>
+            <View
+                style={[
+                    S.K,
+                    durum === 3 && S.K2,
+                    (durum === 1 || durum === 2) && tlfnH.klavye.durum && { justifyContent: 'flex-end' }
+                ]}
+            >
                 <Resim
                     source={require('../../assets/logo/logo.png')}
                     height={tlfnH.W(logoH)}
