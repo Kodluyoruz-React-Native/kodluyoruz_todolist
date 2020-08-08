@@ -118,6 +118,7 @@ export const splashS = StyleSheet.create({
 		flex: 1
 	},
 	K2: { //anasayfa için splash ekranı container
+		width: null,
 		position: 'absolute',
 		left: W(2),
 		top: H(2)
@@ -196,7 +197,7 @@ export const anasayfaUstBolgeS = StyleSheet.create({
 		backgroundColor: R.r1,
 		paddingLeft: W(25),
 		paddingRight: 15,
-		justifyContent: 'center',
+		justifyContent: 'center'
 	},
 	ustAlanY: {
 		fontWeight: 'bold',
