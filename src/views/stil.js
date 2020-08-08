@@ -71,7 +71,7 @@ export const anasayfaS = StyleSheet.create({
 		alignItems: 'center',
 		backgroundColor: 'white',
 		//borderWidth: 2,
-		borderColor: R.r1
+		//borderColor: R.r1
 	},
 	notEkleModalKapatB: { position: 'absolute', top: 3, right: 5 },
 	modalBaslik: {

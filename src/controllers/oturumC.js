@@ -2,6 +2,7 @@ import { observable, action, decorate } from 'mobx';
 import splashC from './splashC';
 import fbH from '../helper/fbH';
 import uyelikM from '../models/uyelikM';
+import notM from '../models/notM';
 import strgH from '../helper/strgH';
 
 class oturumC {
@@ -52,6 +53,7 @@ class oturumC {
 
         if (x.sonuc) {
             strgH.kaydetOturumBilgileri(this.email, this.sifre, 'acik');
+            await notM.getirNotlar(uyelikM.uid); //oturum açtıktan sonra kullanıcın notlarını getir
             splashC.set('durum', 3); //oturum açınca anasayfaya git
         }
         else {

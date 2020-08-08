@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, TextInput, TouchableOpacityBase } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput, TouchableOpacityBase, Alert } from 'react-native';
 import { observer } from 'mobx-react';
 import Modal from 'react-native-modal';
 
@@ -16,6 +16,7 @@ import Splash from '../Splash';
 import Arkaplan from '../../components/Arkaplan';
 import Ikon from '../../components/Ikon';
 import tlfnH from '../../helper/tlfnH';
+import { Button } from 'react-native-elements';
 
 
 class Anasayfa extends React.Component {
@@ -34,7 +35,7 @@ class Anasayfa extends React.Component {
                     S.notEkleModalK,
                     {
                         flex: tlfnH.klavye.durum ? 1 : undefined,
-                        margin: tlfnH.klavye.durum ? -22 : null,
+                        margin: tlfnH.klavye.durum ? -22 : undefined,
                         marginBottom: tlfnH.ios ? tlfnH.klavye.h - tlfnH.sbhi() : undefined,
                         borderRadius: tlfnH.klavye.durum ? 0 : 10,
                     }]}
@@ -49,12 +50,16 @@ class Anasayfa extends React.Component {
                         style={S.baslikInput}
                         placeholder={'Başlık'}
                         maxLength={50}
+                        value={C.baslik}
+                        onChangeText={d => C.set('baslik', d)}
                     />
                     <View style={S.notInputK}>
                         <TextInput
                             style={S.notInput}
                             placeholder={'Notunuz'}
                             multiline
+                            value={C.notIcerik}
+                            onChangeText={d => C.set('notIcerik', d)}
                         />
 
                         <View style={S.butonlarK}>
@@ -71,6 +76,14 @@ class Anasayfa extends React.Component {
                             </TouchableOpacity>
                         </View>
                     </View>
+
+                    <Button
+                        type={'clear'}
+                        title={'Oluştur'}
+                        titleStyle={{ fontWeight: 'bold' }}
+                        containerStyle={{ alignSelf: 'flex-end', marginRight: '2.5%' }}
+                        onPress={C.ekleNot}
+                    />
                 </View>
             </Modal>
         );

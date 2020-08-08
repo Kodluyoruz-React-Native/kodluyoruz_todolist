@@ -33,6 +33,35 @@ class fbH {
     });
 
 
+
+    ekleNot = (notid, notVeri) => new Promise((olumlu, olumsuz) => {
+        db.ref(`/NOTLAR/${notid}`)
+            .set(notVeri)
+            .then(() => olumlu(true))
+            .catch(e => olumsuz(e));
+    });
+    eslestirNotUid = (notid, uid, id) => new Promise((olumlu, olumsuz) => {
+        db.ref(`/NOT-UID/${id}`)
+            .set({ notid, uid })
+            .then(() => olumlu(true))
+            .catch(e => olumsuz(e));
+    });
+    getirNotlar = uid => new Promise((olumlu, olumsuz) => { //kullanıcının notid lerini getir
+        db.ref(`/NOT-UID/`)
+            .orderByChild('uid') //uid e göre sırala
+            .equalTo(uid) //verideki uid verilen uid ile eşleşiyorsa getir
+            .once('value')
+            .then(d => olumlu(d.val()))
+            .catch(e => olumsuz(e));
+    });
+    getirNot = notid => new Promise((olumlu, olumsuz) => { //kullanıcının notid lerini getir
+        db.ref(`/NOTLAR/${notid}`)
+            .once('value')
+            .then(d => olumlu(d.val()))
+            .catch(e => olumsuz(e));
+    });
+
+
     guncelleKullaniciBilgi = (uid, veri) => new Promise((olumlu, olumsuz) => {
         db.ref(`/KULLANICILAR/${uid || 'HATA'}`) //KAYDEDİLECEK YOL
             .set(veri) //KAYDEDİLECEK VERİ
@@ -57,6 +86,11 @@ decorate(
 
         kaKontrol: action,
         setKA: action,
+
+        ekleNot: action,
+        eslestirNotUid: action,
+        getirNotlar: action,
+        getirNot: action,
 
         guncelleKullaniciBilgi: action,
         getirKullaniciBilgi: action,
