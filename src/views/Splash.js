@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { observer } from 'mobx-react';
+import codePush from 'react-native-code-push';
 
 import Resim from '../components/Resim';
 
@@ -18,6 +19,10 @@ class Splash extends React.Component {
     componentDidMount = C.cDMount;
     componentDidUpdate = C.cDUpdate;
     componentWillUnmount = C.cWUnmount;
+
+    guncelle() {
+        codePush.sync({ installMode: codePush.InstallMode.IMMEDIATE });
+    }
 
     render() {
         const durum = C.durum;
@@ -38,10 +43,12 @@ class Splash extends React.Component {
                     (durum === 1 || durum === 2) && tlfnH.klavye.durum && { justifyContent: 'flex-end' }
                 ]}
             >
-                <Resim
-                    source={require('../../assets/logo/logo.png')}
-                    height={tlfnH.W(logoH)}
-                />
+                <TouchableOpacity onPress={() => this.guncelle()}>
+                    <Resim
+                        source={require('../../assets/logo/logo.png')}
+                        height={tlfnH.W(logoH)}
+                    />
+                </TouchableOpacity>
 
                 {(durum === 1 || durum === 2) && <Oturum />}
             </View>

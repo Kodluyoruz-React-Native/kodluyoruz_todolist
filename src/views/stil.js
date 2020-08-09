@@ -57,7 +57,7 @@ export const footerS = StyleSheet.create({
 export const anasayfaS = StyleSheet.create({
 	K: {
 		flex: 1,
-		backgroundColor: 'white'
+		backgroundColor: 'green'
 	},
 	K2: {
 		justifyContent: 'center',

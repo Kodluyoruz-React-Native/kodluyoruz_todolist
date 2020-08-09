@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">KD To Do List</string>
+    <string moduleConfig="true" name="CodePushDeploymentKey">QNAmEIgk58et8ri5EcmPcveudNpbPITkxSLDP</string>
 </resources>
