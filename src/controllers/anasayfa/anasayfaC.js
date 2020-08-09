@@ -7,8 +7,11 @@ import fbH from '../../helper/fbH';
 
 class anasayfaC {
     cDMount = async () => { //AÇILIŞTAN HEMEN SONRA
+        console.count('anasayfaC_cDMount');
     }
     cDUpdate = () => { //UPDATE'DEN HEMEN SONRA
+        console.count('anasayfaC_cDUpdate');
+        console.timeEnd('Anasayfa_update');
         LayoutAnimation.easeInEaseOut();
     }
     cWUnmount = () => { //KAPANIŞTAN HEMEN NÖCE

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, FlatList } from 'react-native';
 import { observer } from 'mobx-react';
 import { View as ViewA } from 'react-native-animatable';
 
@@ -21,6 +21,7 @@ class Notlar extends React.Component {
     componentWillUnmount = C.cWUnmount;
 
     not(d, i) {
+        //return <Text>{JSON.stringify(d)}</Text>
         return (
             <ViewA
                 key={i}
@@ -107,67 +108,26 @@ class Notlar extends React.Component {
 
 
     render() {
-        const notlar = notM.notlar;
-        /*[ //SUNUCUDAN GELECEK
-        {
-            aciklama: 'Irure dolore voluptate voluptate dolor amet anim aliquip fugiat est Lorem in aliqua dolor.',
-            renk: 'r3'
-        },
-        {
-            aciklama: 'Irure dolore voluptate voluptate dolor amet anim aliquip fugiat est Lorem in aliqua dolor.',
-            renk: 'r2'
-        },
-        {
-            aciklama: 'Irure dolore voluptate voluptate dolor amet anim aliquip fugiat est Lorem in aliqua dolor.',
-            renk: 'r8'
-        },
-        {
-            aciklama: 'Irure dolore voluptate voluptate dolor amet anim aliquip fugiat est Lorem in aliqua dolor.',
-            renk: 'r7'
-        },
-        {
-            aciklama: 'Irure dolore voluptate voluptate dolor amet anim aliquip fugiat est Lorem in aliqua dolor.',
-            renk: 'r5'
-        },
-        {
-            aciklama: 'Irure dolore voluptate voluptate dolor amet anim aliquip fugiat est Lorem in aliqua dolor.',
-            renk: 'r6'
-        },
-        {
-            aciklama: 'Irure dolore voluptate voluptate dolor amet anim aliquip fugiat est Lorem in aliqua dolor.',
-            renk: 'r4'
-        },
-        {
-            aciklama: 'Irure dolore voluptate voluptate dolor amet anim aliquip fugiat est Lorem in aliqua dolor.',
-            renk: 'r1'
-        },
-    ]*/
+        const notlar = notM.notlar || [];
 
         return (
             <View style={S.notlarK}>
-                <ScrollView>
-                    <View style={{ height: tlfnH.H(3) }} />
+                <FlatList
+                    data={notlar}
+                    extraData={notlar} //?
+                    renderItem={d => this.not(d.item, d.index)}
+                    initialNumToRender={1}
+                />
 
-                    {notlar && notlar.map((d, i) => this.not(d, i))}
+                {/*
+                    <ScrollView>
+                        <View style={{ height: tlfnH.H(3) }} />
 
-                    {/*
-                        BUNLARI BÖYLE TEK TEK Mİ YAZACAĞIZ?
-                        ÇARE: FLATLIST, YA DA SCROLLVIEW + ARRAY.MAP(d => <Component />)
-                    */}
+                        {notlar.map((d, i) => this.not(d, i))}
 
-                    {/*
-                        { this.not(notlar[0], 0) }
-                    {this.not(notlar[1], 1)}
-                    {this.not(notlar[2], 2)}
-                    {this.not(notlar[3], 3)}
-                    {this.not(notlar[4], 4)}
-                    {this.not(notlar[5], 5)}
-                    {this.not(notlar[6], 6)}
-                    {this.not(notlar[7], 7)}
-                    */}
-
-                    <View style={{ height: tlfnH.H(3) }} />
-                </ScrollView>
+                        <View style={{ height: tlfnH.H(3) }} />
+                    </ScrollView>
+                */}
             </View>
         );
     }
