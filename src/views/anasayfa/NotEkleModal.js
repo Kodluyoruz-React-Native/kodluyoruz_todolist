@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, TextInput } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput, ScrollView } from 'react-native';
 import { observer } from 'mobx-react';
 import Modal from 'react-native-modal';
 import { Button } from 'react-native-elements';
@@ -10,6 +10,7 @@ import temaH from '../../helper/temaH';
 import { anasayfaS as S } from '../stil';
 
 import Ikon from '../../components/Ikon';
+import Resim from '../../components/Resim';
 import tlfnH from '../../helper/tlfnH';
 
 
@@ -63,11 +64,15 @@ class NotEkleModal extends React.Component {
                                 <Ikon is={'MaterialCommunityIcons'} i={'share-variant'} c={temaH.renkler.r2} s={24} />
                             </TouchableOpacity>
 
-                            <TouchableOpacity style={S.buton}>
+                            <TouchableOpacity style={S.buton} onPress={C.fotografSec}>
                                 <Ikon is={'MaterialCommunityIcons'} i={'camera-plus'} c={temaH.renkler.r2} s={24} />
                             </TouchableOpacity>
                         </View>
                     </View>
+
+                    <ScrollView style={{ borderWidth: 1, margin: '5%' }} horizontal>
+                        {C.gorseller.map(d => <Resim source={{ uri: d.uri }} height={tlfnH.W(15)} />)}
+                    </ScrollView>
 
                     <Button
                         type={'clear'}
